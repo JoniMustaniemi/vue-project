@@ -1,30 +1,87 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
+<script>
+import api from "./services/api.js";
+import { fetchItems, addItem } from "./utils/utils.js";
+import Banner from "./components/banner/Banner.vue";
+import Sidebar from "./components/sidebar/Sidebar.vue";
+
+export default {
+  components: {
+    Banner,
+    Sidebar,
+  },
+  data() {
+    return {
+      items: [],
+      newItem: "",
+    };
+  },
+  created() {
+    this.loadItems();
+  },
+  methods: {
+    async loadItems() {
+      try {
+        this.items = await fetchItems();
+      } catch (error) {
+        console.error(error);
+      }
+    },
+    async addItem() {
+      try {
+        await addItem(this.newItem);
+        this.loadItems();
+        this.newItem = "";
+      } catch (error) {
+        console.error(error);
+      }
+    },
+  },
+};
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div id="app">
+    <Banner />
+    <div className="bodyWrapper">
+      <Sidebar />
+      <div class="content"></div>
+    </div>
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+#app {
+  position: relative;
+  color: white;
+  min-height: 100vh;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+
+#app::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("./assets/backdrop.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  filter: blur(6px);
+  transform: scale(1.2);
 }
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+
+.bodyWrapper {
+  display: flex;
+  flex: 1;
+  padding: 20px;
+}
+
+.content {
+  width: 100%;
+  height: 200vh;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
 }
 </style>

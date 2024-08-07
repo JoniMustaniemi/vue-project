@@ -1,0 +1,163 @@
+{
+    "categories": [
+        {
+            "name": "Electronics",
+            "subcategories": [
+                "Smartphones",
+                "Laptops",
+                "Tablets",
+                "Accessories",
+                "Cameras",
+                "Audio Equipment"
+            ]
+        },
+        {
+            "name": "Home",
+            "subcategories": [
+                "Furniture",
+                "Appliances",
+                "Cookware",
+                "Home Decor",
+                "Bedding"
+            ]
+        },
+        {
+            "name": "Clothing",
+            "subcategories": [
+                "Men's Clothing",
+                "Women's Clothing",
+                "Kid's Clothing",
+                "Footwear",
+                "Bags & Accessories",
+                "Jewelry"
+            ]
+        },
+        {
+            "name": "Beauty",
+            "subcategories": [
+                "Skincare",
+                "Makeup",
+                "Haircare",
+                "Fragrances",
+                "Personal Hygiene"
+            ]
+        },
+        {
+            "name": "Sports",
+            "subcategories": [
+                "Exercise Equipment",
+                "Outdoor Gear",
+                "Sportswear",
+                "Camping Equipment"
+            ]
+        },
+        {
+            "name": "games",
+            "subcategories": [
+                "Puzzles",
+                "Board Games"
+            ]
+        },
+        {
+            "name": "Books",
+            "subcategories": [
+                "Fiction",
+                "Non-Fiction",
+                "Educational"
+            ]
+        },
+        {
+            "name": "Health",
+            "subcategories": [
+                "Supplements",
+                "Fitness Equipment",
+                "Personal Care Products"
+            ]
+        },
+        {
+            "name": "Apparel",
+            "subcategories": [
+                "Casual Wear",
+                "Formal Wear",
+                "Swimwear",
+                "Lingerie",
+                "Accessories"
+            ]
+        },
+        {
+            "name": "Electronics",
+            "subcategories": [
+                "Gaming Consoles",
+                "Smart Home Devices",
+                "Wearables",
+                "Audio Systems"
+            ]
+        },
+        {
+            "name": "Home Improvement",
+            "subcategories": [
+                "Tools & Hardware",
+                "Paint & Supplies",
+                "Gardening",
+                "Lighting"
+            ]
+        },
+        {
+            "name": "Pets",
+            "subcategories": [
+                "Pet Food",
+                "Toys & Accessories",
+                "Health & Wellness",
+                "Grooming"
+            ]
+        },
+        {
+            "name": "Eco Products",
+            "subcategories": [
+                "Reusable Goods",
+                "Sustainable Clothing",
+                "Organic Beauty Products"
+            ]
+        },
+        {
+            "name": "Handmade",
+            "subcategories": [
+                "Crafts",
+                "Custom Jewelry",
+                "Handmade Clothing",
+                "Artwork"
+            ]
+        },
+        {
+            "name": "Gadgets",
+            "subcategories": [
+                "Innovative Gadgets",
+                "Smart Home Devices",
+                "Drones"
+            ]
+        },
+        {
+            "name": "Collectibles",
+            "subcategories": [
+                "Antiques",
+                "Memorabilia",
+                "Vintage Clothing"
+            ]
+        },
+        {
+            "name": "Digital Products",
+            "subcategories": [
+                "E-books",
+                "Software",
+                "Online Courses"
+            ]
+        },
+        {
+            "name": "Food & Beverage",
+            "subcategories": [
+                "Groceries",
+                "Gourmet & Specialty Foods"
+            ]
+        }
+    ]
+}
