@@ -4,10 +4,10 @@ import api from "../services/api";
 export async function fetchItems() {
   try {
     const response = await api.getItems();
-    return response.data;
+    return response.data[0].categories;
   } catch (error) {
     console.error(error);
-    throw error; 
+    throw error;
   }
 }
 
@@ -18,6 +18,6 @@ export async function addItem(newItem) {
     await api.postItem(item);
   } catch (error) {
     console.error(error);
-    throw error; 
+    throw error;
   }
 }

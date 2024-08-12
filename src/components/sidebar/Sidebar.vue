@@ -23,8 +23,9 @@ export default {
 .sideBar {
   height: fit-content;
   width: 30vw;
-  background-color: rgba(0, 0, 0, 0.5);
-  margin-right: 20px;
+  max-width: 500px;
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  margin-right: 5px;
   border-radius: 20px;
   color: #06374b;
   padding: 20px;

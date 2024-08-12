@@ -63,11 +63,12 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("./assets/backdrop.jpg");
+  background-image: url("./assets/backdrop_2.jpg");
   background-size: cover;
   background-position: center;
+  /* background-color: grey; */
   z-index: -1;
-  filter: blur(6px);
+  filter: blur(100px);
   transform: scale(1.2);
 }
 
@@ -75,13 +76,15 @@ export default {
   display: flex;
   flex: 1;
   padding: 20px;
+  justify-content: center;
 }
 
 .content {
   width: 100%;
+  max-width: 2000px;
   height: 200vh;
   padding: 20px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5); 
   border-radius: 20px;
 }
 </style>

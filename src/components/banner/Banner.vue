@@ -7,6 +7,7 @@ const count = ref(0);
 <template>
   <div class="banner">
     <div class="links-container va-h4">
+      <div class="logo"></div>
       <a href="#link1">Home</a>
       <a href="#link2">Shop</a>
       <a href="#link3">About</a>
@@ -18,11 +19,29 @@ const count = ref(0);
 
 <style scoped>
 .banner {
-  width: 100vw;
-  height: 20vh;
+  width: fit-content;
+  height: 10vh;
+  max-height: 120px;
   background-color: rgba(0, 0, 0, 0.5);
   vertical-align: middle;
   display: flex;
+  justify-content: start;
+  margin: 2% auto;
+  border-bottom: 2px solid black;
+  border-radius: 20px;
+}
+
+.logo {
+  border: 2px solid silver;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: black;
+  margin-left: -5%;
+  background: url("../../assets/shopLogo.png");
+  background-position: center;
+  background-size: 185%;
+  border: 2px solid black;
 }
 
 .links-container {
@@ -34,12 +53,11 @@ const count = ref(0);
 
 .links-container a {
   color: whitesmoke;
-  text-decoration: underline;
   padding: 8.2vh 50px;
 }
 
 a:hover {
   padding: 8.2vh 50px;
-  background-color: #00000033;
+  /* background-color: #00000033; */
 }
 </style>
