@@ -1,13 +1,14 @@
 <script>
-import api from "./services/api.js";
 import { fetchItems, addItem } from "./utils/utils.js";
 import Banner from "./components/banner/Banner.vue";
 import Sidebar from "./components/sidebar/Sidebar.vue";
+import ProductList from "./components/productlist/ProductList.vue";
 
 export default {
   components: {
     Banner,
     Sidebar,
+    ProductList,
   },
   data() {
     return {
@@ -44,7 +45,9 @@ export default {
     <Banner />
     <div className="bodyWrapper">
       <Sidebar />
-      <div class="content"></div>
+      <div class="content">
+        <ProductList />
+      </div>
     </div>
   </div>
 </template>
@@ -63,10 +66,9 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("./assets/backdrop_2.jpg");
+  background-image: url("./assets/backdrop.jpg");
   background-size: cover;
   background-position: center;
-  /* background-color: grey; */
   z-index: -1;
   filter: blur(100px);
   transform: scale(1.2);
@@ -84,7 +86,7 @@ export default {
   max-width: 2000px;
   height: 200vh;
   padding: 20px;
-  background-color: rgba(0, 0, 0, 0.5); 
+  margin-top: 50px;
   border-radius: 20px;
 }
 </style>

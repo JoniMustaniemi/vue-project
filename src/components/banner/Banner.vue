@@ -58,6 +58,5 @@ const count = ref(0);
 
 a:hover {
   padding: 8.2vh 50px;
-  /* background-color: #00000033; */
 }
 </style>
