@@ -1,7 +1,6 @@
 import api from "../services/api";
 
-// Function to fetch items.
-export async function fetchItems() {
+export async function fetchCategoryList() {
   try {
     const response = await api.getItems();
     return response.data[0].categories;
@@ -11,7 +10,23 @@ export async function fetchItems() {
   }
 }
 
-// Function to add an item.
+export async function fetchProducts(category = "all") {
+  try {
+    const response = await api.getItems();
+    const productData = response.data[0].categories;
+    const selectedCategory = productData.find(
+      (cat) => cat.name.toLowerCase() === category.toLowerCase()
+    );
+
+    if (selectedCategory) {
+      return selectedCategory.products || [];
+    }
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+}
+
 export async function addItem(newItem) {
   try {
     const item = { name: newItem };

@@ -1,6 +1,6 @@
 // stores/categoryStore.js
 import { defineStore } from 'pinia';
-import { fetchItems } from '../utils/utils'; // Adjust the import path as needed
+import { fetchCategoryList } from '../utils/utils'; // Adjust the import path as needed
 
 export const useCategoryStore = defineStore('category', {
   state: () => ({
@@ -10,7 +10,7 @@ export const useCategoryStore = defineStore('category', {
   actions: {
     async fetchCategories() {
       try {
-        this.categories = await fetchItems();
+        this.categories = await fetchCategoryList();
       } catch (error) {
         console.error('Failed to fetch categories:', error);
       }

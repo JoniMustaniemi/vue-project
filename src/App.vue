@@ -1,5 +1,5 @@
 <script>
-import { fetchItems, addItem } from "./utils/utils.js";
+import { fetchCategoryList, addItem } from "./utils/utils.js";
 import Banner from "./components/banner/Banner.vue";
 import Sidebar from "./components/sidebar/Sidebar.vue";
 import ProductList from "./components/productlist/ProductList.vue";
@@ -22,7 +22,7 @@ export default {
   methods: {
     async loadItems() {
       try {
-        this.items = await fetchItems();
+        this.items = await fetchCategoryList();
       } catch (error) {
         console.error(error);
       }

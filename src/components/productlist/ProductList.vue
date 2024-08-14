@@ -1,7 +1,7 @@
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, watch } from "vue";
 import { useCategoryStore } from "../../stores/categoryStore";
-import { fetchItems } from "../../utils/utils";
+import { fetchCategoryList, fetchProducts } from "../../utils/utils";
 import ProductCard from "../productcard/ProductCard.vue";
 
 const categoryStore = useCategoryStore();
@@ -9,13 +9,24 @@ const products = ref([]);
 const activeProduct = ref(null);
 
 onMounted(async () => {
+  await loadProducts(categoryStore.activeCategory?.name || "All");
+});
+
+watch(
+  () => categoryStore.activeCategory,
+  async (newCategory) => {
+    await loadProducts(newCategory?.name || "All");
+  }
+);
+
+async function loadProducts(category) {
   try {
-    const response = await fetchItems();
+    const response = await fetchProducts(category);
     products.value = response;
   } catch (error) {
     console.error("Failed to fetch products:", error);
   }
-});
+}
 </script>
 
 <template>
