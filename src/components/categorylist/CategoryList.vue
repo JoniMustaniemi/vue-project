@@ -12,6 +12,7 @@ onMounted(() => {
 <template>
   <div>
     <div class="categoryContainer">
+      <h1>Category</h1>
       <div
         class="categoryItem"
         v-for="category in categoryStore.categories"
@@ -27,7 +28,7 @@ onMounted(() => {
             }"
             @click="categoryStore.toggleActive(category)"
           >
-            <span>{{ category.name }}</span>
+            <p>{{ category.name }}</p>
           </button>
         </div>
       </div>
@@ -40,44 +41,40 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   height: fit-content;
+  padding-top: 20px;
 }
 
 .categoryItem {
-  flex: 1 1 55px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 50%;
 }
 
 .categoryButton {
   position: relative;
-  width: 150px;
-  height: 40px;
+  width: 100%;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
-  font-weight: bold;
-  font-size: 14px;
-  text-transform: uppercase;
-  background-color: rgba(0, 0, 0, 0.1);
+  color: black;
+  font-size: 1.2em;
+  transition: all 0.2s ease-in-out;
   cursor: pointer;
-  transition: transform 0.2s;
   overflow: hidden;
-  border-radius: 20px;
-  border: 1px solid black;
+  background-color: transparent;
+  border: 1px solid transparent;
+  text-transform: capitalize;
 }
 
 .categoryButton.active {
-  transform: scale(1.5);
-  filter: brightness(1.2);
-  background: linear-gradient(45deg, #e6923d73, #ff6a00ea, #e6923d73);
   transition: all 0.2s ease-in-out;
+  border-left: 3px solid orangered;
+  font-size: 1.4em;
 }
 
 .categoryButton:hover:not(.active) {
-  transform: scale(1.2);
+  font-size: 1.4em;
 }
 
 .categoryButton::before {
@@ -91,9 +88,15 @@ onMounted(() => {
   transition: filter 0.2s;
 }
 
-.categoryButton > span {
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+.categoryButton > p {
   width: 100%;
   text-align: center;
+}
+
+h1 {
+  font-size: 1.8em;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
 }
 </style>

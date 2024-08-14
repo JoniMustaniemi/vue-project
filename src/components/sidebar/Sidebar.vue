@@ -5,11 +5,6 @@ export default {
   components: {
     CategoryList,
   },
-  data() {
-    return {
-      colors: ["#095576"],
-    };
-  },
 };
 </script>
 
@@ -21,12 +16,9 @@ export default {
 
 <style scoped>
 .sideBar {
-  height: fit-content;
-  width: 30vw;
-  max-width: 500px;
-  margin-right: 5px;
-  border-radius: 20px;
-  color: #06374b;
-  padding: 20px;
+  height: auto;
+  width: 300px;
+  max-width: 300px;
+  border-right: 1px solid black;
 }
 </style>

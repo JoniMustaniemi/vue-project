@@ -69,14 +69,13 @@ p {
 
 .productImage {
   transition: all 0.2s ease-in-out;
-  filter: brightness(0.5) grayscale(100);
+  filter: brightness(0.5);
   width: 100%;
   height: 100%;
   object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
 }
 
 .productInfoContainer {
