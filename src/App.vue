@@ -1,15 +1,29 @@
-<script>
+<script setup>
+import { ref, watch } from "vue";
+import { useShoppingCartStore } from "./stores/shoppingCartStore"; // Adjust the import path as needed
+
 import Banner from "./components/banner/Banner.vue";
 import Sidebar from "./components/sidebar/Sidebar.vue";
 import ProductList from "./components/productlist/ProductList.vue";
+import ShoppingCart from "./components/shoppingcart/ShoppingCart.vue";
 
-export default {
-  components: {
-    Banner,
-    Sidebar,
-    ProductList,
+// Create a store instance
+const shoppingCartStore = useShoppingCartStore();
+
+// Access cart state from the store
+const cart = shoppingCartStore.cart;
+
+// Make cart available in the template
+const cartItems = ref(cart);
+
+// Watch for changes in the cart and update cartItems accordingly
+watch(
+  () => shoppingCartStore.cart,
+  (newCart) => {
+    cartItems.value = newCart;
   },
-};
+  { immediate: true }
+);
 </script>
 
 <template>
@@ -25,6 +39,7 @@ export default {
         <ProductList />
       </main>
     </div>
+    <ShoppingCart :cartItems="cartItems" />
   </div>
 </template>
 

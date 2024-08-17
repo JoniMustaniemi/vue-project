@@ -1,10 +1,17 @@
 <script setup>
 import { onMounted, ref } from "vue";
+import { useShoppingCartStore } from "../../stores/shoppingCartStore";
 import arrow from "../../assets/arrow.png";
 
 const props = defineProps({
   product: Object,
 });
+
+onMounted(() => {
+  loadImage();
+});
+
+const shoppingCartStore = useShoppingCartStore();
 
 const imageUrl = ref("");
 
@@ -24,9 +31,9 @@ const loadImage = async () => {
   }
 };
 
-onMounted(() => {
-  loadImage();
-});
+const addToCart = () => {
+  shoppingCartStore.addToCart(props.product);
+};
 </script>
 
 <template>
@@ -44,7 +51,7 @@ onMounted(() => {
       <div class="productPrice">
         <h1>{{ product.price }} €</h1>
       </div>
-      <button class="addToCart">
+      <button class="addToCart" @click="addToCart">
         <h1>Add to cart</h1>
       </button>
     </div>
