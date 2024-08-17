@@ -1,35 +1,43 @@
 <script setup>
-import { defineProps, ref, onMounted } from "vue";
+import { defineProps, ref, onMounted, watch } from "vue";
+import ProductDetailModal from "../productdetailmodal/ProductDetailModal.vue";
 
-// Define the props for the component
 const props = defineProps({
   product: Object,
 });
 
-// Create a ref to hold the image URL
 const imageUrl = ref("");
+const ProductCardDetailsActive = ref(false);
 
-// Function to load the image dynamically
 const loadImage = async () => {
   const imageName = props.product.name.toLowerCase().replace(/\s+/g, "");
   try {
-    // Dynamically import the image
     const image = await import(`../../assets/products/${imageName}.jpg`);
-    imageUrl.value = image.default; // Set the image URL if found
+    imageUrl.value = image.default;
   } catch (error) {
-    // If the image is not found, set an empty string or a fallback URL
-    imageUrl.value = ""; // Optionally, set a fallback image URL here
+    imageUrl.value = "";
   }
 };
 
-// Load the image when the component is mounted
+const openProductDetails = (e) => {
+  ProductCardDetailsActive.value = true;
+};
+
+watch(ProductCardDetailsActive, (newValue) => {
+  if (newValue) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "";
+  }
+});
+
 onMounted(() => {
   loadImage();
 });
 </script>
 
 <template>
-  <div class="productCard">
+  <div class="productCard" @click="openProductDetails">
     <img class="productImage" :src="imageUrl" :alt="product.name + '.jpg'" />
     <div class="productInfoContainer">
       <h2 class="productName">{{ product.name }}</h2>
@@ -37,6 +45,11 @@ onMounted(() => {
       <p class="productPrice">{{ product.price }} €</p>
     </div>
   </div>
+  <ProductDetailModal
+    v-if="ProductCardDetailsActive"
+    :product="product"
+    @close="ProductCardDetailsActive = false"
+  />
 </template>
 
 <style scoped>
