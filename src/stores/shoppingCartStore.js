@@ -20,8 +20,8 @@ export const useShoppingCartStore = defineStore("shoppingCart", {
         JSON.parse(JSON.stringify(this.cart))
       );
     },
-    removeFromCart(productId) {
-      this.cart = this.cart.filter((item) => item.id !== productId);
+    removeFromCart(product) {
+      this.cart = this.cart.filter((item) => item.name !== product);
     },
     increaseQuantity(productId) {
       const item = this.cart.find((item) => item.id === productId);

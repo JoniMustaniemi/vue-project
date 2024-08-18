@@ -53,21 +53,18 @@ async function loadProducts(category) {
   grid-template-rows: repeat(4, 1fr);
   grid-column-gap: 30px;
   grid-row-gap: 30px;
-
-
   padding: 80px 40px;
   width: 100%;
 }
 
 .categoryName {
-
   position: absolute;
   margin-top: -70px;
 }
 
 h2 {
   font-size: 3em;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 @media (min-width: 2000px) {

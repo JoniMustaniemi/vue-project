@@ -7,16 +7,11 @@ import Sidebar from "./components/sidebar/Sidebar.vue";
 import ProductList from "./components/productlist/ProductList.vue";
 import ShoppingCart from "./components/shoppingcart/ShoppingCart.vue";
 
-// Create a store instance
 const shoppingCartStore = useShoppingCartStore();
-
-// Access cart state from the store
 const cart = shoppingCartStore.cart;
 
-// Make cart available in the template
 const cartItems = ref(cart);
 
-// Watch for changes in the cart and update cartItems accordingly
 watch(
   () => shoppingCartStore.cart,
   (newCart) => {
@@ -50,6 +45,7 @@ watch(
   min-height: 100vh;
   max-width: 2000px;
   margin: 0 auto;
+  user-select: none;
 }
 
 .bodyWrapper {

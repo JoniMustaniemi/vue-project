@@ -92,6 +92,12 @@ const addToCart = () => {
   top: 10px;
   transform: rotate(180deg);
   padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.arrowIcon:hover {
+  transform: scale(1.1) rotate(180deg);
 }
 
 .productImage {
@@ -144,7 +150,7 @@ const addToCart = () => {
   padding: 20px;
   cursor: pointer;
   transition: all 0.02s ease-in-out;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Horizontal offset, vertical offset, blur radius, color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 button:hover {
