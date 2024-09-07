@@ -1,15 +1,13 @@
 <script setup>
 import { ref, watch } from "vue";
-import { useShoppingCartStore } from "./stores/shoppingCartStore"; // Adjust the import path as needed
-
+import { useShoppingCartStore } from "./stores/shoppingCartStore";
 import Banner from "./components/banner/Banner.vue";
 import Sidebar from "./components/sidebar/Sidebar.vue";
 import ProductList from "./components/productlist/ProductList.vue";
 import ShoppingCart from "./components/shoppingcart/ShoppingCart.vue";
-
+  
 const shoppingCartStore = useShoppingCartStore();
 const cart = shoppingCartStore.cart;
-
 const cartItems = ref(cart);
 
 watch(
