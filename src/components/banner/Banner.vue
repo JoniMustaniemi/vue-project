@@ -7,11 +7,11 @@
     </div>
   </div>
 </template>
+
 <style scoped>
 .banner {
   width: 100%;
   height: 300px;
-
   vertical-align: middle;
   display: flex;
   background: url("../../assets/header.png") center no-repeat;
