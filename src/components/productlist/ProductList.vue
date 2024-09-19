@@ -51,15 +51,15 @@ async function loadProducts(category) {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
-  grid-column-gap: 30px;
-  grid-row-gap: 30px;
-  padding: 80px 40px;
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+  padding: 5rem 2.5rem;
   width: 100%;
 }
 
 .categoryName {
   position: absolute;
-  margin-top: -70px;
+  margin-top: -3rem;
 }
 
 h2 {
@@ -70,8 +70,8 @@ h2 {
 @media (min-width: 2000px) {
   .productContainer {
     grid-template-columns: repeat(5, 1fr);
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 1.5rem;
   }
 }
 </style>
