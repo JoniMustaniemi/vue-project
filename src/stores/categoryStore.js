@@ -1,6 +1,5 @@
-// stores/categoryStore.js
 import { defineStore } from 'pinia';
-import { fetchCategoryList } from '../utils/utils'; // Adjust the import path as needed
+import { fetchCategoryList } from '../utils/utils';
 
 export const useCategoryStore = defineStore('category', {
   state: () => ({
