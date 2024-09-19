@@ -6,7 +6,6 @@ export const useShoppingCartStore = defineStore("shoppingCart", {
   }),
   actions: {
     addToCart(product) {
-      console.log("Name of the item", product.name);
       const existingProduct = this.cart.find(
         (item) => item.name === product.name
       );
@@ -15,10 +14,6 @@ export const useShoppingCartStore = defineStore("shoppingCart", {
       } else {
         this.cart.push({ ...product, quantity: 1 });
       }
-      console.log(
-        "Current shopping cart:",
-        JSON.parse(JSON.stringify(this.cart))
-      );
     },
     removeFromCart(product) {
       this.cart = this.cart.filter((item) => item.name !== product);
